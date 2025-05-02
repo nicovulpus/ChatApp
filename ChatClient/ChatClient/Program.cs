@@ -1,11 +1,11 @@
 ﻿using Microsoft.AspNetCore.SignalR.Client;
 
 var connection = new HubConnectionBuilder()
-    .WithUrl("http://localhost:5000/chat") // Same as your server hub
+    .WithUrl("http://localhost:5000/chat") 
     .WithAutomaticReconnect()
     .Build();
 
-// Handle incoming messages
+
 connection.On<string, string>("ReceiveMessage", (user, message) =>
 {
     Console.WriteLine($"{user}: {message}");
